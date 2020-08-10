@@ -13,6 +13,7 @@ The goal of this project is to predict the claimed amount (between 0 and $800) a
 ## Project details
 <br/>
 A high-level summary of the procedures to solve this problem could be found at the presentation slides uploaded to this repo. The entire work could be divided into 3 sections:
+<br/>
 1. EDA
 To generate idea on how the features should be engineered for modeling, EDA was first conducted using Tableau. Particularly, I investigated into what factors correlated with delay outcomes, and identified the features from 3 domains: time domain (including week of the year, day of the week, and hour of the day), location domain (including arrival airport groups based on the average delay, and the distance bwteen departure and arrival airports), and airline domain (including airline groups based upon the average delay). The features were created accordingly in python, and carried to the modeling step.
 <br/>
