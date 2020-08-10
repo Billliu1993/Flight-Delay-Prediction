@@ -7,7 +7,7 @@ The codes were written in python, and the notebook was uploaded to this repo. Du
 
 ## Project overview
 <br/>
-The goal of this project is to predict the claimed amount (between 0 and $800) assigned to fights caused by delay. To solve this problem, I first converted it into a binary classification problem, where the delay time > 3 (including "cancelled") is labeled as 1, otherwise labeled as 0. Then, the binary classification models were constructed with engineered features based on exploratory data analyst (EDA) results, then the predicted claimed amount was determined as predicted claimed amount = $800 * probability(label = 1). 
+The goal of this project is to predict the claimed amount (between 0 and $800) assigned to fights caused by delay. To solve this problem, I first converted it into a binary classification problem, where the delay time > 3 hr (including "cancelled") is labeled as 1, otherwise labeled as 0. Then, the binary classification models were constructed with engineered features based on exploratory data analyst (EDA) results, then the predicted claimed amount was determined as predicted claimed amount = $800 * probability(label = 1). 
 <br/>
 
 ## Project details
@@ -21,11 +21,16 @@ To generate idea on how the features should be engineered for modeling, EDA was 
 With features created and processed, the machine-learning models were created, trained, compared, and tuned using AUC-ROC as the primary evaluation matric. One major challenge  in modeling was that the prediction label distribution was heavily imbalanced, with label = 1 as the minority group. Therefore, the Synthetic Minority Over-sampling TEchnique (SMOTE) technique was used to oversample the minority class (label = 1). This approach significantly improve the modeling performance on such imbalanced dataset.
 <br/>
 3. Result Analysis
+With the final model identified, the feature importances were studied to identify the the strongest indicators for flight delay more than 3 hr.
 <br/>
 
 ## Outcome highlights
 <br/>
-
+1. The delay classification achieved the accuracy of 0.86
+<br/>
+2. The claimed amount prediction had the mean absolute error of 35.21, and the Brier error of 28011.43
+<br/>
+3. Among the factors from time domain, location domain, and airline domain, long distance between the departure and arrival airports is the strongest indicator for delay more than 3h. In addition, flights during Tuesday, Wednesday, and Sunday are also more likely to be delayed for more than 3 hours
 <br/>
 
 ## Future work
